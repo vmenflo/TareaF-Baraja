@@ -42,7 +42,7 @@ public class PruebaBaraja {
         //Y la baraja para comprobar que se queda la posicion en null
         System.out.println("Y la baraja queda así--------------------------");
         
-        for(int i = 0; i<40;i++){
+        for(int i = 0; i<30;i++){
             System.out.println(baraja.getBaraja()[i]);
         }
     }

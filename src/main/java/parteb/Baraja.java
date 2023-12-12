@@ -17,15 +17,15 @@ public class Baraja {
 
     //Atributos 
     private Naipe[] baraja;
-    public static final int NAIPEXBARAJA = 40;
+    public static final int TAMANIO_BARAJA = 40;
 
     //Constructor 
     public Baraja() {
 
-        Naipe[] cartas = new Naipe[NAIPEXBARAJA];
+        Naipe[] cartas = new Naipe[TAMANIO_BARAJA];
         //Palo[] palos = Palo.values();
         Naipe aleatorio;
-        for (int i = 0; i < NAIPEXBARAJA; i++) {
+        for (int i = 0; i < TAMANIO_BARAJA; i++) {
             do {
                 aleatorio = new Naipe();
 
@@ -60,7 +60,7 @@ public class Baraja {
         StringBuilder sb = new StringBuilder();
         sb.append("Baraja{");
         sb.append("baraja=").append(baraja);
-        sb.append(", CUARENTA=").append(NAIPEXBARAJA);
+        sb.append(", CUARENTA=").append(TAMANIO_BARAJA);
         sb.append('}');
         return sb.toString();
     }
@@ -97,35 +97,45 @@ public class Baraja {
 
     //METODO PARA SACAR CARTAS 
     public Naipe[] sacarCarta(int numCartas) {
-        
+        /*Controlo cuantas cartas sacar
         if (numCartas <1 ||numCartas > 40) {
             Naipe[] cartas = new Naipe[0];
             return cartas;
-        }
-        
+        } Ya no me va a servir */
+        // Creo un aleatorio para seleccionar la posicion aleatoria
         int aleatorio = 0;
         Random r = new Random();
         Naipe[] cartas = new Naipe[numCartas];
         
+        // Bucle para darle valor al aleatorio de forma random y guardarla en 
+        // la nueva array de cartas
         for (int i = 0; i < numCartas; i++) {
-            do {
-                aleatorio = r.nextInt(1, NAIPEXBARAJA);
-            } while (baraja[aleatorio] == null);
+           do { //Controlo que no meta un null
+                aleatorio = r.nextInt(1, 40);
+           } while (baraja[aleatorio] == null);
 
             cartas[i] = baraja[aleatorio];
-            baraja[aleatorio] = null;
+            baraja[aleatorio]=null;
 
         }
         
-        baraja= new Naipe[NAIPEXBARAJA - numCartas];
-        for(int i=0; i<baraja.length; i++){
-            
-            baraja[i]= 
-            
+        // Creamos una baraja auxiliar con el nuevo tamaño
+        int tamaño=TAMANIO_BARAJA-numCartas;
+        //Creamos un naipe auxiliar
+        Naipe[] nuevaBaraja = new Naipe [tamaño];
+        int contador=0;
+        //For-each para meter nos naipes en la baraja
+         for (Naipe naipe : baraja) {
+            if (naipe != null) {
+                nuevaBaraja[contador++] = naipe;
+            }
         }
+       //Lo igualo
+       baraja=nuevaBaraja;
 
         return cartas;
     }
+
 
    
 }

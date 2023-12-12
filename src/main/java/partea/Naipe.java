@@ -69,9 +69,27 @@ public class Naipe {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("Naipe{");
+        if(numero==8){
+            sb.append(", Numero=").append("Sota");
+            sb.append("palo=").append(palo);
+            sb.append('}');
+        }
+        else if(numero==9){
+            sb.append(", Numero=").append("Caballo");
+            sb.append("palo=").append(palo);
+            sb.append('}');
+        }
+        else if(numero==10){
+            sb.append(", Numero=").append("Rey");
+            sb.append("palo=").append(palo);
+            sb.append('}');
+        }
+        else {
         sb.append("palo=").append(palo);
         sb.append(", Numero=").append(numero);
         sb.append('}');
+        }
+       
         return sb.toString();
     }
     
