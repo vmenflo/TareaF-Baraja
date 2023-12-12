@@ -71,17 +71,17 @@ public class Naipe {
         sb.append("Naipe{");
         if(numero==8){
             sb.append(", Numero=").append("Sota");
-            sb.append("palo=").append(palo);
+            sb.append(" palo=").append(palo);
             sb.append('}');
         }
         else if(numero==9){
             sb.append(", Numero=").append("Caballo");
-            sb.append("palo=").append(palo);
+            sb.append(" palo=").append(palo);
             sb.append('}');
         }
         else if(numero==10){
             sb.append(", Numero=").append("Rey");
-            sb.append("palo=").append(palo);
+            sb.append(" palo=").append(palo);
             sb.append('}');
         }
         else {

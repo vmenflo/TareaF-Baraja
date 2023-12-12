@@ -60,6 +60,9 @@ public class Baraja {
         StringBuilder sb = new StringBuilder();
         sb.append("Baraja{");
         sb.append("baraja=").append(baraja);
+        for(int i=0; i<baraja.length;i++){
+            System.out.println(baraja[i]);
+        }
         sb.append(", CUARENTA=").append(TAMANIO_BARAJA);
         sb.append('}');
         return sb.toString();
@@ -74,10 +77,10 @@ public class Baraja {
             Naipe auxiliar = null;
             //Creamos el obbjeto ramdon para los números aleatorios
             Random r = new Random();
-            int aleatorio1 = r.nextInt(1, 41);
+            int aleatorio1 = r.nextInt(1, baraja.length);
             int aleatorio2 = 0;
             do { //Bucle para asegurarnos de que no salga el mismo número
-                aleatorio2 = r.nextInt(1, 41);
+                aleatorio2 = r.nextInt(1,baraja.length);
             } while (aleatorio1 == aleatorio2);
 
             System.out.println("En la baraja, el naipe que ocupa la posicion "
@@ -97,11 +100,12 @@ public class Baraja {
 
     //METODO PARA SACAR CARTAS 
     public Naipe[] sacarCarta(int numCartas) {
-        /*Controlo cuantas cartas sacar
-        if (numCartas <1 ||numCartas > 40) {
+        //Controlo cuantas cartas sacar
+        if (numCartas <1 ||numCartas > baraja.length) {
             Naipe[] cartas = new Naipe[0];
             return cartas;
-        } Ya no me va a servir */
+        } 
+        // Ya no me va a servir 
         // Creo un aleatorio para seleccionar la posicion aleatoria
         int aleatorio = 0;
         Random r = new Random();

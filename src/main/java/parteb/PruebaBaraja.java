@@ -14,18 +14,14 @@ public class PruebaBaraja {
     public static void main(String[] args) {
         Baraja baraja = new Baraja();
         
-        for(int i = 0; i<40;i++){
-            System.out.println(baraja.getBaraja()[i]);
-        }
+        baraja.toString();
         
         //Llamamos al metodo para barajar en los movimientos que digamos
         baraja.barajar(4);
         
         System.out.println("Una vez barajada queda así---------------------");
         
-        for(int i = 0; i<40;i++){
-            System.out.println(baraja.getBaraja()[i]);
-        }
+        baraja.toString();
         
         //Probamos el metodo sacar cartas
         //Creamos una array para almacenar la array que devuelva de naipes
@@ -42,8 +38,6 @@ public class PruebaBaraja {
         //Y la baraja para comprobar que se queda la posicion en null
         System.out.println("Y la baraja queda así--------------------------");
         
-        for(int i = 0; i<30;i++){
-            System.out.println(baraja.getBaraja()[i]);
-        }
+        baraja.toString();
     }
 }
